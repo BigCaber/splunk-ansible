@@ -1,0 +1,8 @@
+---
+- name: mv default certs
+  command: mv /opt/splunk/etc/auth/cacert.pem.default /opt/splunk/etc/auth/cacert.pem
+  become: yes
+
+- name: chown certs
+  command: chown splunk:splunk /opt/splunk/etc/auth/cacert.pem
+  become: yes
