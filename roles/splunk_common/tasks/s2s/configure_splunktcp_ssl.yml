@@ -44,7 +44,7 @@
     dest: "{{ splunk.home }}/etc/system/local/inputs.conf"
     section: SSL
     option: rootCA
-    value: "{{ splunk.s2s.ca if splunk.s2s.ca else '$SPLUNK_HOME/etc/auth/cacert.pem' }}"
+    value: "{{ splunk.s2s.ca if splunk.s2s.ca else '$SPLUNK_HOME/etc/auth/cacert.pem.default' }}"
     owner: "{{ splunk.user }}"
     group: "{{ splunk.group }}"
   when: ansible_system is not match("CYGWIN*|Win32NT")
