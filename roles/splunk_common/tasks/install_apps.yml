@@ -41,6 +41,10 @@
     register: app_remote
     when:
       - app_url is match("^(https?|file)://.*")
+  
+  - name: print app_local vars
+    debug:
+      var: app_local  
 
   - name: Infer app filepath
     set_fact:
